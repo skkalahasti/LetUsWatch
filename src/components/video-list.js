@@ -22,15 +22,15 @@ export default class VideoList extends Component {
 }
 */
 
-const VideoList = (props) => {
-    const VideoItems = props.videos.map(video => { return (
-    <VideoListItem key={video.etag} video = {video}/>
+const VideoList = ({videos, onVideoSelect}) => {
+    const VideoItems = videos.map(video => { return (
+    <VideoListItem onVideoSelect={onVideoSelect} key={video.etag} video = {video}/>
     )});
 
     return (
-        <div>
+        <ul className="list-group">
             {VideoItems}
-        </div>
+        </ul>
     );
   };
 

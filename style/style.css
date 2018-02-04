@@ -1,0 +1,11 @@
+.search-bar{
+    width: 75%;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.list-group-item:hover{
+    background-color: #eee;
+}
