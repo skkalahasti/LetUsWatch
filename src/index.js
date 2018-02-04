@@ -12,9 +12,13 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {videos: [], selectedVideo: null, searchTerm: 'hello'};
+        this.state = {videos: [], selectedVideo: null};
 
-        YTSearch({key: API_KEY, term: this.state.searchTerm}, videos => {
+        this.videoSearch('Hello'); // initial search
+    }
+
+    videoSearch(term) {
+        YTSearch({key: API_KEY, term: {term}}, videos => {
             this.setState({videos: videos, selectedVideo: videos[0]})
         });
     }
@@ -23,7 +27,7 @@ class App extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <SearchBar searchTerm={this.state.searchTerm}/>
+                    <SearchBar onSearch={term => this.videoSearch(term)}/>
                 </div>
                 <div className="row">
                     <div className="col-7">
