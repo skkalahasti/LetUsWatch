@@ -15,10 +15,10 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar row m-2">
-                <input className="form-control col-11"
+                <input className="form-control col-10"
                        value={this.state.inputValue}
                        onChange={event => this.setState({inputValue: event.target.value})}/>
-                    <button className="btn btn-outline-primary col-1" onClick= {() => this.searchForVideos()} >
+                    <button className="btn btn-outline-primary col-1 ml-1" onClick= {() => this.searchForVideos()} >
                         Search
                     </button>
             </div>
